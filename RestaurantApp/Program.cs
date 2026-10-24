@@ -10,20 +10,29 @@ namespace RestaurantApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello TIT.1/1");
+            List<Restaurant> restaurants = new List<Restaurant> 
+            {
+
+            new Restaurant(1, "Quanjude Roast Duck", "Beijing Cuisine", 4.5),
+            new Restaurant(2, "Donglaishun Hot Pot", "Hot Pot", 4.6),
+            new Restaurant(3, "Din Tai Fung", "Taiwanese Cuisine", 4.7) 
+
+            };
+
         }
-    }class Restaurast
+    }
+    class Restaurant
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
         public double Rating { get; set; }
 
-        public Restaurast (int id, string name, string type, double rating)
+        public Restaurant (int id, string name, string type, double rating)
         {
             Id = id;
             Name = name;
-            Type = Type;
+            Type = type;
             Rating = rating;
         }
     }
