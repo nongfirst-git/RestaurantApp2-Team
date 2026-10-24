@@ -14,15 +14,15 @@ namespace RestaurantApp
         }
     }class Restaurast
     {
-        public int id { get; set; }
-        public string name { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
         public string Type { get; set; }
         public double Rating { get; set; }
 
         public Restaurast (int id, string name, string type, double rating)
         {
-            id = id;
-            name = name;
+            Id = id;
+            Name = name;
             Type = Type;
             Rating = rating;
         }
