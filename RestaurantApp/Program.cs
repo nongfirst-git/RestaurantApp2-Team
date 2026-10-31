@@ -29,6 +29,7 @@ namespace RestaurantApp
             var avg = restaurants.Average(x => x.Rating);
             Console.WriteLine($"Total is {amount}");
             Console.WriteLine($"Score Average is {avg}");
+            Console.WriteLine("End");
 
         }
     }
@@ -45,6 +46,7 @@ namespace RestaurantApp
             Name = name;
             Type = type;
             Rating = rating;
+          
         }
     }
 }
