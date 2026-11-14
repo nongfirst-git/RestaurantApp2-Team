@@ -26,10 +26,10 @@ namespace RestaurantApp
             {
                 Console.WriteLine(
                     $"{item.Id} {item.Name}. ({item.Type}) - Rating: {item.Rating}");
-            }
 
-            var amount = filteredRestaurants.Count();
-            var avg = filteredRestaurants.Average(x => x.Rating);
+            }
+            var amounts = filteredRestaurants.Count();
+            var avgs = filteredRestaurants.Average(x => x.Rating);
 
             Console.WriteLine("=== Add New Restaurant ===");
 
@@ -56,10 +56,7 @@ namespace RestaurantApp
             Console.WriteLine($"Score Average is {avg}");
             Console.WriteLine("End");
             
-         
-
-
-
+    
 
         }
     }
