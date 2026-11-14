@@ -10,21 +10,27 @@ namespace RestaurantApp
     {
         static void Main(string[] args)
         {
-            List<Restaurant> restaurants = new List<Restaurant> 
+            List<Restaurant> restaurants = new List<Restaurant>
             {
-
-            new Restaurant(1, "Quanjude Roast Duck", "Beijing Cuisine", 4.5),
-            new Restaurant(2, "Donglaishun Hot Pot", "Hot Pot", 4.6),
-            new Restaurant(3, "Din Tai Fung", "Taiwanese Cuisine", 4.7),
-            new Restaurant(4, "Huguosi Snacks", "Snacks", 5.0),
-            new Restaurant(5, "Haidilao Hot Pot", "hot pot", 4.7)
-
+                new Restaurant(1, "Quanjude Roast Duck", "Beijing Cuisine", 4.5),
+                new Restaurant(2, "Donglaishun Hot Pot", "Hot Pot", 4.6),
+                new Restaurant(3, "Din Tai Fung", "Taiwanese Cuisine", 4.7),
+                new Restaurant(4, "Huguosi Snacks", "Snacks", 5.0),
+                new Restaurant(5, "Haidilao Hot Pot", "hot pot", 4.7)
             };
-            foreach (var item in restaurants)
+
+            // กรองเฉพาะร้านที่มีคะแนนตั้งแต่ 4.5 ขึ้นไป
+            var filteredRestaurants = restaurants.Where(x => x.Rating >= 4.5).ToList();
+
+            foreach (var item in filteredRestaurants)
             {
                 Console.WriteLine(
                     $"{item.Id} {item.Name}. ({item.Type}) - Rating: {item.Rating}");
             }
+
+            var amount = filteredRestaurants.Count();
+            var avg = filteredRestaurants.Average(x => x.Rating);
+
             Console.WriteLine("=== Add New Restaurant ===");
 
             Console.Write("Enter Restaurant Name: ");
@@ -57,6 +63,7 @@ namespace RestaurantApp
 
         }
     }
+
     class Restaurant
     {
         public int Id { get; set; }
@@ -64,13 +71,12 @@ namespace RestaurantApp
         public string Type { get; set; }
         public double Rating { get; set; }
 
-        public Restaurant (int id, string name, string type, double rating)
+        public Restaurant(int id, string name, string type, double rating)
         {
             Id = id;
             Name = name;
             Type = type;
             Rating = rating;
-          
         }
     }
 }
