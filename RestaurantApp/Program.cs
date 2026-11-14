@@ -29,9 +29,18 @@ namespace RestaurantApp
             var avg = restaurants.Average(x => x.Rating);
             Console.WriteLine($"Total is {amount}");
             Console.WriteLine($"Score Average is {avg}");
+
+            var highest = restaurants.OrderByDescending(x => x.Rating).First();
+            var lowest = restaurants.OrderBy(x => x.Rating).First();
+
+            Console.WriteLine($"Highest Rating: {highest.Name} - {highest.Rating}");
+            Console.WriteLine($"Lowest Rating: {lowest.Name} - {lowest.Rating}");
+
             Console.WriteLine("End");
 
+
         }
+
     }
     class Restaurant
     {
