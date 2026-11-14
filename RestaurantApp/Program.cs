@@ -50,8 +50,8 @@ namespace RestaurantApp
 
             Console.WriteLine("Restaurant added successfully!");
             Console.WriteLine();
-            var amount = restaurants.Count();
-            var avg = restaurants.Average(x => x.Rating);
+            var amounts = restaurants.Count();
+            var avgs = restaurants.Average(x => x.Rating);
             Console.WriteLine($"Total is {amount}");
             Console.WriteLine($"Score Average is {avg}");
             Console.WriteLine("End");
